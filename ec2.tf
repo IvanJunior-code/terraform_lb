@@ -13,7 +13,7 @@ resource "aws_key_pair" "ssh_key_terraform" {
 
 ###################### EC2 ######################
 resource "aws_instance" "ec2_terraform" {
-    count = 2
+  count                  = 2
   ami                    = var.ami
   instance_type          = var.instance_type
   subnet_id              = aws_subnet.subnet_terraform.id
