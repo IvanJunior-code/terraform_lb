@@ -28,8 +28,8 @@ resource "aws_route_table" "route_table_terraform" {
 
 
 ###################### Route Table Association ######################
-resource "aws_route_table_association" "association_subnet_route" {
-  subnet_id      = aws_subnet.subnet_terraform.id
-  route_table_id = aws_route_table.route_table_terraform.id
-}
+#resource "aws_route_table_association" "association_subnet_route" {
+#  subnet_id      = aws_subnet.subnet_terraform.id
+#  route_table_id = aws_route_table.route_table_terraform.id
+#}
 ###################### ##### ##### ########### ######################
