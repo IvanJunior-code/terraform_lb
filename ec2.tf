@@ -16,9 +16,8 @@ resource "aws_instance" "ec2_terraform" {
   count                  = 2
   ami                    = var.ami
   instance_type          = var.instance_type
-  subnet_id              = aws_subnet.subnet_terraform.id
+  subnet_id              = count.index == 0 ? aws_subnet.subnet_1a.id : aws_subnet.subnet_1b.id
   vpc_security_group_ids = [aws_security_group.sg_terraform.id]
-  #availability_zone = 
 
   tags = {
     Name      = "EC2_${count.index + 1}"
