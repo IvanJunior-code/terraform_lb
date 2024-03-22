@@ -11,14 +11,27 @@ resource "aws_vpc" "vpc_terraform" {
 
 
 ###################### Subnet ######################
-resource "aws_subnet" "subnet_terraform" {
+resource "aws_subnet" "subnet_1a" {
   vpc_id                  = aws_vpc.vpc_terraform.id
   cidr_block              = var.subnet_cidr_block
   availability_zone       = var.availability_zone
-  map_public_ip_on_launch = true
+  map_public_ip_on_launch = false
 
   tags = {
-    Name      = "Subnet"
+    Name      = "Subnet 1a"
+    ManagedBy = var.tags_ManagedBy
+  }
+
+}
+
+resource "aws_subnet" "subnet_1b" {
+  vpc_id                  = aws_vpc.vpc_terraform.id
+  cidr_block              = var.subnet_cidr_block
+  availability_zone       = var.availability_zone
+  map_public_ip_on_launch = false
+
+  tags = {
+    Name      = "Subnet 1b"
     ManagedBy = var.tags_ManagedBy
   }
 
