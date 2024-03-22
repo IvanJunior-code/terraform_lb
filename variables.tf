@@ -23,11 +23,11 @@ variable "vpc_cidr_block" {
 }
 
 variable "subnet_cidr_block" {
-  default = "172.16.10.0/24"
+  default = "10.0.2.0/24"
 }
 
 variable "availability_zone" {
-  default = "us-east-1a"
+  default = ["us-east-1a", "us-east-1b"]
 }
 
 variable "sg_name" {
