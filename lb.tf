@@ -25,7 +25,7 @@ resource "aws_lb" "my_load_balancer" {
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.lb_sg.id]
-  subnets            = [aws_subnet.subnet_1a.id, aws_subnet.subnet_1b.id] # Substitua pelas suas subnets
+  subnets            = [aws_subnet.subnet_1a.id, aws_subnet.subnet_1b.id]
 
   enable_deletion_protection = false
 }
@@ -52,7 +52,7 @@ resource "aws_lb_target_group" "my_target_group" {
 
 # Associando as instâncias EC2 ao target group
 resource "aws_lb_target_group_attachment" "web_attachment" {
-  count           = 2
+  count            = 2
   target_group_arn = aws_lb_target_group.my_target_group.arn
   target_id        = aws_instance.ec2_terraform[count.index].id
 }
