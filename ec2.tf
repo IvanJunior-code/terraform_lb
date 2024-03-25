@@ -14,7 +14,7 @@ resource "aws_key_pair" "ssh_key_terraform" {
 ###################### EC2 ######################
 resource "aws_instance" "ec2_terraform" {
   count                  = 2
-  ami                    = var.ami
+  ami                    = count.index == 0 ? var.ami[0] : var.ami[1]
   instance_type          = var.instance_type
   subnet_id              = count.index == 0 ? aws_subnet.subnet_1a.id : aws_subnet.subnet_1b.id
   vpc_security_group_ids = [aws_security_group.sg_terraform.id]
