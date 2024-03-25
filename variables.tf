@@ -11,7 +11,7 @@ variable "instance_type" {
 }
 
 variable "ami" {
-  default = "ami-01c146ce0993b7884" #Ubuntu-2023-10-27T15-45
+  default = ["ami-01c146ce0993b7884", "ami-0f9b57fe51681be3f"] #Ubuntu-2023-10-27T15-45 e Nginx 1.20.2 on ubuntu 18.04
 }
 
 variable "key_name" {
@@ -19,11 +19,11 @@ variable "key_name" {
 }
 
 variable "vpc_cidr_block" {
-  default = "172.16.0.0/16"
+  default = "10.0.0.0/16"
 }
 
 variable "subnet_cidr_block" {
-  default = "10.0.2.0/24"
+  default = ["10.0.1.0/24", "10.0.2.0/24"]
 }
 
 variable "availability_zone" {
