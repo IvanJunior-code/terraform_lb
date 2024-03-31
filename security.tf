@@ -40,19 +40,19 @@ resource "aws_security_group" "sg_terraform" {
 
 
 ###################### Security Group Ingress Rule ######################
-resource "aws_vpc_security_group_ingress_rule" "ingress_ssh_ipv4" {
-  security_group_id = aws_security_group.sg_terraform.id
-  description       = "Allow SSH inbound traffic IPv4."
-  cidr_ipv4         = "0.0.0.0/0"
-  from_port         = 22
-  ip_protocol       = "tcp"
-  to_port           = 22
+# resource "aws_vpc_security_group_ingress_rule" "ingress_ssh_ipv4" {
+#   security_group_id = aws_security_group.sg_terraform.id
+#   description       = "Allow SSH inbound traffic IPv4."
+#   cidr_ipv4         = "0.0.0.0/0"
+#   from_port         = 22
+#   ip_protocol       = "tcp"
+#   to_port           = 22
 
-  tags = {
-    Name      = "Ingress Rule SSH IPv4"
-    ManagedBy = var.tags_ManagedBy
-  }
-}
+#   tags = {
+#     Name      = "Ingress Rule SSH IPv4"
+#     ManagedBy = var.tags_ManagedBy
+#   }
+# }
 
 resource "aws_vpc_security_group_ingress_rule" "ingress_http_ipv4" {
   security_group_id = aws_security_group.sg_terraform.id
@@ -85,19 +85,19 @@ resource "aws_vpc_security_group_ingress_rule" "ingress_https_ipv4" {
 
 
 ###################### Security Group Egress Rule ######################
-resource "aws_vpc_security_group_egress_rule" "egress_ssh_ipv4" {
-  security_group_id = aws_security_group.sg_terraform.id
-  description       = "Allow SSH outbound traffic IPv4."
-  cidr_ipv4         = "0.0.0.0/0"
-  from_port         = 22
-  ip_protocol       = "tcp"
-  to_port           = 22
+# resource "aws_vpc_security_group_egress_rule" "egress_ssh_ipv4" {
+#   security_group_id = aws_security_group.sg_terraform.id
+#   description       = "Allow SSH outbound traffic IPv4."
+#   cidr_ipv4         = "0.0.0.0/0"
+#   from_port         = 22
+#   ip_protocol       = "tcp"
+#   to_port           = 22
 
-  tags = {
-    Name      = "Egress Rule SSH IPv4"
-    ManagedBy = var.tags_ManagedBy
-  }
-}
+#   tags = {
+#     Name      = "Egress Rule SSH IPv4"
+#     ManagedBy = var.tags_ManagedBy
+#   }
+# }
 
 resource "aws_vpc_security_group_egress_rule" "egress_http_ipv4" {
   security_group_id = aws_security_group.sg_terraform.id
