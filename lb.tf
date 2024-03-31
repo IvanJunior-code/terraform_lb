@@ -1,36 +1,9 @@
-# Definindo o security group para o load balancer
-resource "aws_security_group" "lb_sg" {
-  name        = "lb_sg"
-  description = "Security group for the load balancer"
-  vpc_id      = aws_vpc.vpc_terraform.id
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name      = "Load Balancer Security Group"
-    ManagedBy = var.tags_ManagedBy
-  }
-
-}
-
 # Criando o load balancer
 resource "aws_lb" "my_load_balancer" {
   name               = "my-load-balancer"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.lb_sg.id]
+  security_groups    = [aws_security_group.sg_terraform.id]
   subnets            = [aws_subnet.subnet_1a.id, aws_subnet.subnet_1b.id]
 
   enable_deletion_protection = false
