@@ -12,6 +12,33 @@ resource "aws_security_group" "sg_terraform" {
 ###################### ######## ##### ######################
 
 
+# # Definindo o security group para o load balancer
+# resource "aws_security_group" "lb_sg" {
+#   name        = "lb_sg"
+#   description = "Security group for the load balancer"
+#   vpc_id      = aws_vpc.vpc_terraform.id
+
+#   ingress {
+#     from_port   = 80
+#     to_port     = 80
+#     protocol    = "tcp"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+
+#   egress {
+#     from_port   = 0
+#     to_port     = 0
+#     protocol    = "-1"
+#     cidr_blocks = ["0.0.0.0/0"]
+#   }
+
+#   tags = {
+#     Name      = "Load Balancer Security Group"
+#     ManagedBy = var.tags_ManagedBy
+#   }
+# }
+
+
 ###################### Security Group Ingress Rule ######################
 resource "aws_vpc_security_group_ingress_rule" "ingress_ssh_ipv4" {
   security_group_id = aws_security_group.sg_terraform.id
