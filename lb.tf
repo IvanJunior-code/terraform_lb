@@ -9,8 +9,7 @@ resource "aws_lb" "my_load_balancer" {
   enable_deletion_protection = false
 
   tags = {
-    Name      = "Load Balancer"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Load Balancer"
   }
 }
 
@@ -27,8 +26,7 @@ resource "aws_lb_listener" "my_listener" {
   }
 
   tags = {
-    Name      = "Load Balancer Listener"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Load Balancer Listener"
   }
 }
 
@@ -41,8 +39,7 @@ resource "aws_lb_target_group" "my_target_group" {
   depends_on = [aws_instance.ec2_terraform]
 
   tags = {
-    Name      = "Load Balancer Target Group"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Load Balancer Target Group"
   }
 }
 
