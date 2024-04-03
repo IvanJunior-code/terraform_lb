@@ -19,7 +19,7 @@ resource "aws_lb_listener" "my_listener" {
   load_balancer_arn = aws_lb.my_load_balancer.arn
   port              = 80
   protocol          = "HTTP"
-  depends_on = [ aws_lb_target_group.my_target_group ]
+  depends_on        = [aws_lb_target_group.my_target_group]
 
   default_action {
     type             = "forward"
@@ -34,11 +34,11 @@ resource "aws_lb_listener" "my_listener" {
 
 # Definindo o target group
 resource "aws_lb_target_group" "my_target_group" {
-  name     = "my-target-group"
-  port     = 80
-  protocol = "HTTP"
-  vpc_id   = aws_vpc.vpc_terraform.id
-  depends_on = [ aws_instance.ec2_terraform ]
+  name       = "my-target-group"
+  port       = 80
+  protocol   = "HTTP"
+  vpc_id     = aws_vpc.vpc_terraform.id
+  depends_on = [aws_instance.ec2_terraform]
 
   tags = {
     Name      = "Load Balancer Target Group"
