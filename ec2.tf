@@ -4,8 +4,7 @@ resource "aws_key_pair" "ssh_key_terraform" {
   public_key = var.access_key
 
   tags = {
-    Name      = "Key Pair"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Key Pair"
   }
 }
 ###################### ### #### ######################
@@ -20,8 +19,7 @@ resource "aws_instance" "ec2_terraform" {
   vpc_security_group_ids = [aws_security_group.sg_terraform.id]
 
   tags = {
-    Name      = "EC2_${count.index + 1}"
-    ManagedBy = var.tags_ManagedBy
+    Name = "EC2_${count.index + 1}"
   }
 
   key_name = aws_key_pair.ssh_key_terraform.key_name

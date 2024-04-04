@@ -3,8 +3,7 @@ resource "aws_vpc" "vpc_terraform" {
   cidr_block = var.vpc_cidr_block
 
   tags = {
-    Name      = "VPC"
-    ManagedBy = var.tags_ManagedBy
+    Name = "VPC"
   }
 }
 ###################### ### ######################
@@ -18,8 +17,7 @@ resource "aws_subnet" "subnet_1a" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name      = "Subnet 1a"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Subnet 1a"
   }
 
 }
@@ -31,8 +29,7 @@ resource "aws_subnet" "subnet_1b" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name      = "Subnet 1b"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Subnet 1b"
   }
 
 }

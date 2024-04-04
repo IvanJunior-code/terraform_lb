@@ -3,8 +3,7 @@ resource "aws_internet_gateway" "gw_terraform" {
   vpc_id = aws_vpc.vpc_terraform.id
 
   tags = {
-    Name      = "Internet Gateway"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Internet Gateway"
   }
 }
 ###################### ######## ####### ######################
@@ -20,8 +19,7 @@ resource "aws_route_table" "route_table_terraform" {
   }
 
   tags = {
-    Name      = "Route Table"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Route Table"
   }
 }
 ###################### ##### ##### ######################

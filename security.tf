@@ -5,8 +5,7 @@ resource "aws_security_group" "sg_terraform" {
   vpc_id      = aws_vpc.vpc_terraform.id
 
   tags = {
-    Name      = "Security Group"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Security Group"
   }
 }
 ###################### ######## ##### ######################
@@ -34,7 +33,7 @@ resource "aws_security_group" "sg_terraform" {
 
 #   tags = {
 #     Name      = "Load Balancer Security Group"
-#     ManagedBy = var.tags_ManagedBy
+#
 #   }
 # }
 
@@ -50,7 +49,7 @@ resource "aws_security_group" "sg_terraform" {
 
 #   tags = {
 #     Name      = "Ingress Rule SSH IPv4"
-#     ManagedBy = var.tags_ManagedBy
+#
 #   }
 # }
 
@@ -63,8 +62,7 @@ resource "aws_vpc_security_group_ingress_rule" "ingress_http_ipv4" {
   to_port           = 80
 
   tags = {
-    Name      = "Ingress Rule HTTP IPv4"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Ingress Rule HTTP IPv4"
   }
 }
 
@@ -77,8 +75,7 @@ resource "aws_vpc_security_group_ingress_rule" "ingress_https_ipv4" {
   to_port           = 443
 
   tags = {
-    Name      = "Ingress Rule HTTPS IPv4"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Ingress Rule HTTPS IPv4"
   }
 }
 ###################### ######## ##### ####### #### ######################
@@ -95,7 +92,7 @@ resource "aws_vpc_security_group_ingress_rule" "ingress_https_ipv4" {
 
 #   tags = {
 #     Name      = "Egress Rule SSH IPv4"
-#     ManagedBy = var.tags_ManagedBy
+#
 #   }
 # }
 
@@ -108,8 +105,7 @@ resource "aws_vpc_security_group_egress_rule" "egress_http_ipv4" {
   to_port           = 80
 
   tags = {
-    Name      = "Egress Rule HTTP IPv4"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Egress Rule HTTP IPv4"
   }
 }
 
@@ -122,8 +118,7 @@ resource "aws_vpc_security_group_egress_rule" "egress_https_ipv4" {
   to_port           = 443
 
   tags = {
-    Name      = "Egress Rule HTTPS IPv4"
-    ManagedBy = var.tags_ManagedBy
+    Name = "Egress Rule HTTPS IPv4"
   }
 }
 ###################### ######## ##### ###### #### ######################
