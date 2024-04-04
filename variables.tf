@@ -6,10 +6,6 @@ variable "region" {
 variable "access_key" {
 }
 
-variable "tags_ManagedBy" {
-  default = "Terraform"
-}
-
 variable "instance_type" {
   default = "t3.small"
 }
